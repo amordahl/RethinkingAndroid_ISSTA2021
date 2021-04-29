@@ -1,18 +1,27 @@
 # RethinkingAndroid_ISSTA2021
 This repository is our submission to the Artifact Evaluation track of ISSTA 2021.
 
-## Getting Started
-For convenience, we included a virtual machine on Zenodo that has the environment already setup. However, should you wish to setup the experimental environment yourself, please refer to the **Setup** section at the bottom of this document. The rest of these steps should be run from `/home/issta2021` if you use our virtual machine, or whereever you choose to install the environment if you do not (see **INSTALLATION_LOCATION** in [Setup](#setup)).
+## Repository Structure
+This repository is composed of this README, a `resources` folder, and two submodules, pointing to our experimental environment and our dataset. These submodules are included for convenience but do not need to be manually cloned for the experiments -- the VM is already set up, or, if you want to set up the environment yourself, the script to setup the environment will clone the repositories themselves.
 
-We have provided a script that runs a small subset of our experiments. It is called *run_small_experiments.sh*. In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment. Then, simply invoke the script as `./run_small_experiments.sh` (estimated time to run is about *FILL IN*).
+## Getting Started
+For convenience, we included a virtual machine on Zenodo that has the environment already setup (see *Virtual Machine Requirements* at the bottom of this document). However, should you wish to setup the experimental environment yourself, please refer to the **Setup** section at the bottom of this document. The rest of these steps should be run from `/home/issta2021` if you use our virtual machine, or whereever you choose to install the environment if you do not (see **INSTALLATION_LOCATION** in [Setup](#setup)).
+
+Our full experiments for FlowDroid and DroidSafe include 987 different runs of Droidbench 3.0 (211 configurations of FlowDroid + 118 configurations of DroidSafe * 3 replications), and 29610 runs on Fossdroid APKs (211 configurations of FlowDroid + 118 configurations of DroidSafe * 3 replications * 30 FossDroid APKs), and 31650 runs of Google Play APKs (211 configurations of FlowDroid x 3 replications x 50 Google Play APKs). These experiments took about 33,940 machine hours to run. Thus, we have provided a script that runs a small subset of our experiments. It is called [`run_small_experiments.sh`](https://github.com/amordahl/RethinkingAndroid_ISSTA2021/blob/main/resources/run_small_experiments.sh) in the `resources` folder of this repository.
+
+It runs two configurations of Flowdroid ((default and the single-option configuration that sets codeeliminationmode to REMOVECODE) on all of Droidbench and Fossdroid. The codeeliminationmode|->REMOVECODE setting has a bug, in that it is not sound (i.e., it sometimes removes code that it should not). Thus, although the partial order we defined says that this option should be more precise than default, in reality it is less sound.
+
+In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment. Then, simply invoke the script as `./run_small_experiments.sh` (estimated time to run is about 42 minutes).
 
 This script produces the following outputs:
 
-1. `flowdroid_droidbench3.csv`. This contains the results of running two configurations of Flowdroid (default and the single-option configuration that sets codeeliminationmode to REMOVECODE) on all of DroidBench. The output is in the form of a CSV, where each row is one of the 204 tests that DroidBench performs.
-2. A directory called `flowdroid-fossdroid`, which contains the results of running the same two configurations of Flowdroid on all 30 of our FossDroid APKs. Each execution produces one file, named in the format `apk_configuration.xml`. These files are in our augmented AQL-Answer format (we simply added time as an attribute of the `<flow>` element).
-3. A file called `flowdroid-fossdroid.csv`, which contains the summary data of the Fossdroid runs, as a CSV.
+1. `flowdroid_droidbench3.csv`. This contains the results of running two configurations of Flowdroid (default and the single-option configuration that sets codeeliminationmode to REMOVECODE) on all of DroidBench. The output is in the form of a CSV, where each row is one of the 204 tests that DroidBench performs. The full results these were used to answer RQ1 (Figure 2a) and RQ2 (Table 2). 
+2. A directory called `flowdroid-fossdroid`, which contains the results of running the same two configurations of Flowdroid on all 30 of our FossDroid APKs. Each execution produces one file, named in the format `apk_configuration.xml`. These files are in our augmented AQL-Answer format (we simply added time as an attribute of the `<flow>` element). The full results of these were what the student workers we hired classified (Section 3), and the classifications are included in our dataset (included in the repository as [`fossdroid_dataset`](https://github.com/amordahl/fdroid_package/tree/ISSTA2021).
+3. A file called `flowdroid-fossdroid.csv`, which contains the summary data of the Fossdroid runs, as a CSV. The full results of these were used to answer RQ2 (Figure 3) and RQ3 (Table 3, Figures 4-6).
 4. A file called `violations_droidbench.txt`, which contains the violations that were discovered in the DroidBench results.
 5. A file called `violations_fossdroid.txt`, which contains the violations that were discovered in the FossDroid apks.
+
+The latter two files will show precision and soundness violations, and were used to answer RQ4.
 
 ## Detailed Description
 We have provided `./run_full_experiments.sh` which will run the set of experiments on Flowdroid and Droidsafe.
