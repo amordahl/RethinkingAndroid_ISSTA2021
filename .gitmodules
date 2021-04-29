@@ -1,0 +1,6 @@
+[submodule "AndroidTAEnvironment"]
+	path = AndroidTAEnvironment
+	url = https://github.com/amordahl/AndroidTAEnvironment.git
+[submodule "fdroid_package"]
+	path = fossdroid_dataset
+	url = https://github.com/amordahl/fdroid_package.git
