@@ -8,14 +8,18 @@ We have provided a script that runs a small subset of our experiments. It is cal
 
 This script produces the following outputs:
 
-1. `flowdroid_droidbench3.csv`. This contains the results of running two configurations of Flowdroid (default and the single-option configuration that sets codeeliminationmode to REMOVECODE) on all of DroidBench. The output is in the form of a spreadsheet, where each row is one of the 204 tests that DroidBench performs.
-2. A directory called `flowdroid-fossdroid`, which contains the results of running the same two configurations of Flowdroid on all 30 of our FossDroid APKs. Each execution produces one file, named in the format `apk_configuration.xml`.
-3. A file called `flowdroid-fossdroid.csv`, which contains the summary data of the Fossdroid runs.
+1. `flowdroid_droidbench3.csv`. This contains the results of running two configurations of Flowdroid (default and the single-option configuration that sets codeeliminationmode to REMOVECODE) on all of DroidBench. The output is in the form of a CSV, where each row is one of the 204 tests that DroidBench performs.
+2. A directory called `flowdroid-fossdroid`, which contains the results of running the same two configurations of Flowdroid on all 30 of our FossDroid APKs. Each execution produces one file, named in the format `apk_configuration.xml`. These files are in our augmented AQL-Answer format (we simply added time as an attribute of the `<flow>` element).
+3. A file called `flowdroid-fossdroid.csv`, which contains the summary data of the Fossdroid runs, as a CSV.
 4. A file called `violations_droidbench.txt`, which contains the violations that were discovered in the DroidBench results.
 5. A file called `violations_fossdroid.txt`, which contains the violations that were discovered in the FossDroid apks.
 
 ## Detailed Description
 We have provided `./run_full_experiments.sh` which will run the set of experiments on Flowdroid and Droidsafe.
+
+
+### Virtual Machine Requirements
+Our virtual machine requires *how much* disk space, 4GB of RAM and 2 CPUs. We generated it with VirtualBox 6.1.
 
 ## Setup
 We have provided a script that will setup the experimental environment at [`resources/setup.sh`](link). In order to run the script, you first need to download the [benchmark.tar.gz](linkToZenodo) file from Zenodo and place it within the `resources` directory. It is too large to include in the repository. Then, you may need to change the **RESOURCES_HOME** environmental variable at the top of the script. Please check the following things:
