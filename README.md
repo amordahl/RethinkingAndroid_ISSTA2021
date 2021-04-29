@@ -7,7 +7,11 @@ This repository is composed of this README, a `resources` folder, and two submod
 ## Getting Started
 For convenience, we included a virtual machine on Zenodo that has the environment already setup (see *Virtual Machine Requirements* at the bottom of this document). However, should you wish to setup the experimental environment yourself, please refer to the **Setup** section at the bottom of this document. The rest of these steps should be run from `/home/issta2021` if you use our virtual machine, or whereever you choose to install the environment if you do not (see **INSTALLATION_LOCATION** in [Setup](#setup)).
 
-We have provided a script that runs a small subset of our experiments. It is called [`run_small_experiments.sh`](https://github.com/amordahl/RethinkingAndroid_ISSTA2021/blob/main/resources/run_small_experiments.sh) in the `resources` folder of this repository. In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment. Then, simply invoke the script as `./run_small_experiments.sh` (estimated time to run is about 42 minutes).
+We have provided a script that runs a small subset of our experiments. It is called [`run_small_experiments.sh`](https://github.com/amordahl/RethinkingAndroid_ISSTA2021/blob/main/resources/run_small_experiments.sh) in the `resources` folder of this repository.
+
+It runs two configurations of Flowdroid ((default and the single-option configuration that sets codeeliminationmode to REMOVECODE) on all of Droidbench and Fossdroid. The codeeliminationmode|->REMOVECODE setting has a bug, in that it is not sound (i.e., it sometimes removes code that it should not). Thus, although the partial order we defined says that this option should be more precise than default, in reality it is less sound.
+
+In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment. Then, simply invoke the script as `./run_small_experiments.sh` (estimated time to run is about 42 minutes).
 
 This script produces the following outputs:
 
@@ -16,6 +20,8 @@ This script produces the following outputs:
 3. A file called `flowdroid-fossdroid.csv`, which contains the summary data of the Fossdroid runs, as a CSV.
 4. A file called `violations_droidbench.txt`, which contains the violations that were discovered in the DroidBench results.
 5. A file called `violations_fossdroid.txt`, which contains the violations that were discovered in the FossDroid apks.
+
+The latter two files will show precision and soundness violations.
 
 ## Detailed Description
 We have provided `./run_full_experiments.sh` which will run the set of experiments on Flowdroid and Droidsafe.
