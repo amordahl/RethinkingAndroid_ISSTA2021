@@ -1,0 +1,7 @@
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+INSTALLATION_LOCATION=/home/issta2021
+export ANDROID_TA_ENVIRONMENT_HOME=$INSTALLATION_LOCATION/AndroidTAEnvironment
+export ANDROID_SDK_HOME=$INSTALLATION_LOCATION/Android/platforms
+export DROIDSAFE_SRC_HOME=$INSTALLATION_LOCATION/AndroidTAEnvironment/tools/DroidSafe/src
