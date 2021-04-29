@@ -2,7 +2,7 @@
 This repository is our submission to the Artifact Evaluation track of ISSTA 2021.
 
 ## Getting Started
-For convenience, we included a virtual machine on Zenodo that has the environment already setup. However, should you wish to setup the experimental environment yourself, please refer to the **Setup** section at the bottom of this document. The rest of these steps should be run from /home/issta2021 if you use our virtual machine, or whereever you choose to install the environment if you do not (see **INSTALLATION_LOCATION** in [Setup](#setup)).
+For convenience, we included a virtual machine on Zenodo that has the environment already setup. However, should you wish to setup the experimental environment yourself, please refer to the **Setup** section at the bottom of this document. The rest of these steps should be run from `/home/issta2021` if you use our virtual machine, or whereever you choose to install the environment if you do not (see **INSTALLATION_LOCATION** in [Setup](#setup)).
 
 We have provided a script that runs a small subset of our experiments. It is called *run_small_experiments.sh*. Simply open a terminal and type `./run_small_experiments.sh` (estimated time to run is about *FILL IN*).
 
