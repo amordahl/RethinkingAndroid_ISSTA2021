@@ -1,10 +1,13 @@
 # RethinkingAndroid_ISSTA2021
 This repository is our submission to the Artifact Evaluation track of ISSTA 2021.
 
+## Repository Structure
+This repository is composed of this README, a `resources` folder, and two submodules, pointing to our experimental environment and our dataset. These submodules are included for convenience but do not need to be manually cloned for the experiments -- the VM is already set up, or, if you want to set up the environment yourself, the script to setup the environment will clone the repositories themselves.
+
 ## Getting Started
 For convenience, we included a virtual machine on Zenodo that has the environment already setup (see *Virtual Machine Requirements* at the bottom of this document). However, should you wish to setup the experimental environment yourself, please refer to the **Setup** section at the bottom of this document. The rest of these steps should be run from `/home/issta2021` if you use our virtual machine, or whereever you choose to install the environment if you do not (see **INSTALLATION_LOCATION** in [Setup](#setup)).
 
-We have provided a script that runs a small subset of our experiments. It is called *run_small_experiments.sh*. In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment. Then, simply invoke the script as `./run_small_experiments.sh` (estimated time to run is about 42 minutes).
+We have provided a script that runs a small subset of our experiments. It is called [`run_small_experiments.sh`](https://github.com/amordahl/RethinkingAndroid_ISSTA2021/blob/main/resources/run_small_experiments.sh) in the `resources` folder of this repository. In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment. Then, simply invoke the script as `./run_small_experiments.sh` (estimated time to run is about 42 minutes).
 
 This script produces the following outputs:
 
