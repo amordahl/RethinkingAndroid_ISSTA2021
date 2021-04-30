@@ -24,8 +24,15 @@ This script produces the following outputs:
 The latter two files will show precision and soundness violations, and were used to answer RQ4.
 
 ## Detailed Description
-We have provided `./run_full_experiments.sh` which will run the set of experiments on Flowdroid and Droidsafe.
+We have provided `./run_full_experiments.sh` which will run the set of experiments on Flowdroid and Droidsafe. However, as stated above, these took us 33,940 machine hours to complete. So, we describe here how to view the data that we used to make the claims in our paper. These data are primarily located in two places.
 
+### Dataset
+Our dataset of flows classified from FossDroid are located in the [`fossdroid_package`](https://github.com/amordahl/fdroid_package/tree/ISSTA2021) submodule that is at the root of this directory. The documentation in that folder includes detailed instructions on how to read the flows, plus an example of a flow that can be tracked in code.
+
+### Results
+The results we used to create charts, tables, and make statistical claims in our paper are located in [AndroidTAEnvironment/results](https://github.com/amordahl/AndroidTAEnvironment/tree/ISSTA2021/results). There are three top level folders here, corresponding to the three different benchmarks we used, which are then further divided into tool directories. Within each tool directory is a single Excel (.xlsx) file. These contain the aggregated data across all replications for our runs. Each Excel spreadsheet contains all of the records of our runs. Of particular interest are the `oneway-charts` and `twoway-charts` sheets in each file, which include the aggregation of the `single-conf` and `two-way` configuration runs, plus the charts we used in the paper.
+
+The statistical analysis is done by R scripts, included in [resources/scripts/r](https://github.com/amordahl/AndroidTAEnvironment/tree/ISSTA2021/resources/scripts/r). Here, the `build_linear_model.R` script built our statistical model, and our `make_plots.R` script created additional plots we used in the paper. The data that needs to be loaded in as data frames into your R environment to use these scripts are included as CSVs in this directory.
 
 ### Virtual Machine Requirements
 Our virtual machine requires *how much* disk space, 4GB of RAM and 2 CPUs. We generated it with VirtualBox 6.1.
