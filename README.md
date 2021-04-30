@@ -34,7 +34,7 @@ The results we used to create charts, tables, and make statistical claims in our
 
 The statistical analysis is done by R scripts, included in [resources/scripts/r](https://github.com/amordahl/AndroidTAEnvironment/tree/ISSTA2021/resources/scripts/r). Here, the `build_linear_model.R` script built our statistical model, and our `make_plots.R` script created additional plots we used in the paper. The data that needs to be loaded in as data frames into your R environment to use these scripts are included as CSVs in this directory.
 
-### Virtual Machine Requirements
+## Virtual Machine Requirements
 Our virtual machine requires *how much* disk space, 4GB of RAM and 2 CPUs. We generated it with VirtualBox 6.1.
 
 ## Setup
