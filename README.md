@@ -13,8 +13,6 @@ It runs two configurations of Flowdroid (default and the single-option configura
 
 In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment). Then, simply invoke the script as `run_small_experiments.sh` (estimated time to run is approximately 40 minutes).
 
-We split the script into two parts -- `run_small_experiments_droidbench.sh` only runs the Droidbench experiments (i.e., produces items 1 and 4 below), and `run_small_experiments_fossdroid.sh` only runs the FossDroid experiments (i.e., produces items 2, 3, and 5 below).
-
 The script produces the following outputs:
 
 1. `flowdroid_droidbench3.csv`. This contains the results of running two configurations of Flowdroid (default and the single-option configuration that sets codeeliminationmode to REMOVECODE) on all of DroidBench. The output is in the form of a CSV, where each row is one of the 204 tests that DroidBench performs. The full results of these were used to answer RQ1 (Figure 2a) and RQ2 (Table 2). 
