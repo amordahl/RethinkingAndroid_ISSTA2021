@@ -11,7 +11,7 @@ Our full experiments for FlowDroid and DroidSafe include 987 different runs of D
 
 It runs two configurations of Flowdroid (default and the single-option configuration that sets codeeliminationmode to REMOVECODE) on all of Droidbench and Fossdroid. In the paper, we discovered the codeeliminationmode|->REMOVECODE setting has a bug, in that it is not sound (i.e., it sometimes removes code that it should not). Thus, although the partial order we defined says that this option should be more precise than default, in reality it is less sound.
 
-In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment). Then, simply invoke the script as `./run_small_experiments.sh` (estimated time to run is about 42 minutes).
+In order to run this script, copy it to the root of the environment (i.e., `/home/issta2021` on the virtual machine or `$INSTALLATION_LOCATION` on your own environment). Then, simply invoke the script as `./run_small_experiments.sh` (estimated time to run is below 20 minutes).
 
 This script produces the following outputs:
 
