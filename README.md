@@ -1,5 +1,5 @@
 # RethinkingAndroid_ISSTA2021
-This repository is our submission to the Artifact Evaluation track of ISSTA 2021 for our paper titled "Rethinking Android Taint Analysis Evaluations: A Study on the Impact of Tool Configuration Spaces".
+This repository is our submission to the Artifact Evaluation track of ISSTA 2021 for our paper titled "The Impact of Tool Configuration Spaces on the Evaluation of Configurable Taint Analysis for Android".
 
 ## Repository Structure
 This repository is composed of this README, a `resources` folder, and two submodules, pointing to our experimental environment and our dataset. These submodules are included for convenience but do not need to be manually cloned for the experiments -- the virtual machine is already set up, or, if you want to set up the environment yourself, the script to setup the environment will clone the repositories themselves. We have included our paper here as well, as `paper.pdf`.
